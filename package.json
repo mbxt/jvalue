@@ -1,0 +1,31 @@
+{
+  "name": "jvalue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ValueType.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "tests": "jest.cmd --verbose"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/chai": "^4.2.22",
+    "@types/mocha": "^9.0.0",
+    "babel-jest": "^27.3.1",
+    "ts-node": "^10.3.1",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "ts-jest": "^27.0.7"
+  }
+}

@@ -6,10 +6,10 @@ import { IRule } from "./IRule";
 
 export class LowerRangeRestriction extends IRule<typeof NumberType> {
 
-    errorMessage = "{$value} must be smaller than {$this.lowerRange}";
+    // errorMessage = "{$value} must be smaller than {$this.lowerRange}";
 
-    evaluate(value: unknown): boolean {
-        return this.isIncluded ? (value as string | number) >= this.lowerRange : (value as string | number) > this.lowerRange;
+    evaluate(value: number): boolean {
+        return this.isIncluded ? value >= this.lowerRange : value > this.lowerRange;
     }
 
     constructor(protected lowerRange: number | string, protected isIncluded = false) {

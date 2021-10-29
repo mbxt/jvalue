@@ -1,6 +1,4 @@
 import { ValueType } from "../meta/ValueType";
-import { TypicalType, TypicalTypes } from "./TypicalTypes/TypicalType";
-import { UnionType } from "./UnionType";
 
 export declare const runtimeObjectSymbol: unique symbol;
 

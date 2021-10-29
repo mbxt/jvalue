@@ -1,7 +1,7 @@
 import { ValueType } from "../../kernel/meta/ValueType";
 import { NumberType } from "../../kernel/types/TypicalTypes/NumberType";
 import { QuantityUnit } from "./QuantityUnit";
-import { SingleUnit, SiUnitType } from "./SiUnitType";
+import { SiUnitType } from "./SiUnitType";
 
 export class QuantityUnitType extends ValueType {
 

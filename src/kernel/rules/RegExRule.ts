@@ -13,7 +13,7 @@ export class RegExRule<T extends string> extends IRule<typeof StringType> {
 
     serialize(): String {
         return JSON.stringify({
-            "MinLengthRule": this.regEx
+            "RegExRule": this.regEx
         })
     }
 }

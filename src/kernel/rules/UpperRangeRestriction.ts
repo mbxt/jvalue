@@ -3,18 +3,16 @@ import { IRule } from "./IRule";
 
 export class UpperRangeRestriction extends IRule<typeof NumberType> {
 
-    static errorMessage = "{$value} must be greater than {$this.lowerRange}";
+    // static errorMessage = "{$value} must be lower than {$this.lowerRange}";
 
-    evaluate(value: unknown): boolean {
-        return this.included ? (value as string | number) >= this.upperRange : (value as string | number) > this.upperRange;
+    evaluate(value: number): boolean {
+        return this.included ? value <= this.upperRange : value < this.upperRange;
     }
 
-    constructor(protected readonly upperRange: number | string,
+    constructor(protected readonly upperRange: number,
         protected readonly included: boolean = false) {
         super()
     }
-
-    none?: typeof NumberType | undefined;
 
     serialize(): string {
         return JSON.stringify({

@@ -18,14 +18,6 @@ import { UpperRangeRestriction } from "./UpperRangeRestriction";
 //     withsUpperRangeRestriction: UpperRangeRestriction,
 // } as const
 
-// type o = NumberType & applicable<typeof BooleanType>
-// let y: o = new NumberType() as o
-// y.withsLowerBoundRestriction()
-
-
-// let NumberTypes = ___InternalRegisteredValues as real<typeof NumberType>
-// NumberTypes.withsLowerBoundRestriction()
-
 
 
 

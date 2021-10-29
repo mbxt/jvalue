@@ -33,15 +33,6 @@ export abstract class TypicalType<T extends TypicalTypes> extends ValueType {
         return this.optional;
     }
 
-    // withRule(rule: Rule) {
-    //     this.appliedRules.push(rule);
-    //     return this;
-    // }
-
-    // evaluateCustomRules(value: unknown): boolean {
-    //     return this.appliedRules.every((rule) => rule.evaluate(value));
-    // }
-
     serialize(value: TypicalType<T>): string {
         return JSON.stringify(value)
     }

@@ -2,30 +2,25 @@ import { TypicalType } from "./types/TypicalTypes/TypicalType";
 import { UnionType } from "./types/UnionType";
 import { ObjectType } from "./types/ObjectType";
 import { IsOptionalType } from "./meta/ValueType";
+import { StringType } from "./types/TypicalTypes/StringType";
+import { NumberType } from "./types/TypicalTypes/NumberType";
 
-class ValueType {
-
-    public static inferSchema<T extends ObjectType<any> |
-        UnionType<any> |
-        TypicalType<any>>(schema: T) {
-        return schema;
-    }
-
-
-
-    public static createValueType<T extends ObjectType<any>>(schema: T) {
-
-    }
-
-
-}
-
-
-type GetValueTypeParameter<T> = T extends TypicalType<infer u> ? u :
-                                T extends ObjectType<any> ? {} : never;
+let c = new ObjectType({
+    firstName: new StringType(),
+    lastName: new StringType(),
+    age: new NumberType()
+})
 
 type schemaType<u> = u extends ObjectType<infer y> ? schemaTypeHelper<y> : never
 
+const test: schemaType<typeof c>
+
+//infers 
+//const test: schemaTypeHelper<{
+//    firstName: StringType;
+//    lastName: StringType;
+//    age: NumberType;
+//}>
 type getTypeHelper<A> = A extends TypicalType<infer l> ? l : never
 
 type schemaTypeHelper<T extends {}> = {
@@ -34,21 +29,3 @@ type schemaTypeHelper<T extends {}> = {
     T[K] extends TypicalType<infer u> ? u :
     T[K] extends ObjectType<infer y> ? schemaTypeHelper<y> : never;
 }
-
-class other {
-    public static readonly sub: Abs[] = []
-}
-
-abstract class foo<T> {
-    protected value!: T;
-}
-
-class Abs extends foo<other> {
-    public static readonly sub: Abs[] = []
-}
-
-interface F {}
-
-type getApplicableClass<T> = T extends foo<infer u> ? u : "string"
-
-let c: getApplicableClass<Abs>

@@ -43,11 +43,8 @@ export class QuantityUnit extends ValueObject {
         return new QuantityUnit(Math.pow(this.quantity, power), this.unitType.power(power))
     }
 
-    serialize(value: unknown): String {
-        throw new Error("Method not implemented.");
-    }
-    equalTo(other: MetaObject): boolean {
-        throw new Error("Method not implemented.");
+    serialize(value: unknown): string {
+        return JSON.stringify(this);
     }
 
 }

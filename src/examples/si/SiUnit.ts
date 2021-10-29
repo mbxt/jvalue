@@ -49,13 +49,10 @@ export class SiUnit extends ValueObject {
         return this.value as Units
     }
 
-    serialize(value: unknown): String {
-        throw new Error("Method not implemented.");
+    serialize(): string {
+        return JSON.stringify(this)
     }
 
-    equalTo(other: SiUnit): boolean {
-        return ValueType.verifyEquality(this.value, other.value);
-    }
 }
 
 type Units = {

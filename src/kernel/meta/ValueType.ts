@@ -24,6 +24,7 @@ export abstract class ValueType {
 
     public withRule(rule: IRule<any>) {
         this.rules.push(rule)
+        return this
     }
 
     public evalRules(value: unknown) {
